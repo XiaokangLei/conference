@@ -1,0 +1,107 @@
+<view>
+  <!-- loading -->
+  <view wx:if="{{loding}}" class="loding">
+    <van-loading />
+    <view>正在玩命加载...</view>
+  </view>
+  <!-- 骨架屏加载动画 -->
+  <view class="pd" wx:if="{{loding}}">
+    <van-skeleton title row="4" wx:for="{{3}}" wx:key="this" />
+  </view>
+  <!-- 卡片式展示 -->
+  <view class="cu-card article" wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index" wx:for-item="items"
+    data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
+    hover-stay-time="100">
+    <view class="cu-item shadow ">
+      <view class="box title">
+        <view class="left" style="font-size: large;">
+          <view class="solid-bottom text-xl">
+            <text class="text-bold text-blue">{{items.abbr}} </text>
+            <view class="cu-tag bg-orange light sm radius text-right" style="margin-top: -25rpx;">{{items.ccf}}类</view>
+          </view>
+        </view>
+
+        <view class="right" style="font-size: large;">
+          <text class="text-xl text-bold text-blue">···</text>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="content">
+        <view class="desc">
+          <view class="text-content1" wx:if="{{items.time_abs}}">
+            <van-icon name="underway-o" size="16px" color="green" /> 摘要截止日期： {{m1.format(items.time_abs)}}
+            <view class="cu-tag bg-green light sm radius text-right" wx:if="{{m2.format(items.time_abs)}}">
+              {{m2.format(items.time_abs)}}天</view>
+            <view class="cu-tag bg-red light sm radius text-right" wx:else>已截止</view>
+          </view>
+          <view class="text-content1" wx:if="{{items.time}}">
+            <van-icon name="clock-o" size="16px" color="green" /> 正文截止日期： {{m1.format(items.time)}}
+            <view class="cu-tag bg-green light sm radius text-right" wx:if="{{m2.format(items.time)}}">
+              {{m2.format(items.time)}}天</view>
+            <view class="cu-tag bg-red light sm radius text-right" wx:else>已截止</view>
+          </view>
+          <view class="text-content1" wx:if="{{items.time_accept}}">
+            <van-icon name="free-postage" size="16px" color="green" /> 录用通知日期： {{m1.format(items.time_accept)}}
+            <view class="cu-tag bg-green light sm radius text-right" wx:if="{{m2.format(items.time_accept)}}">
+              {{m2.format(items.time_accept)}}天</view>
+            <view class="cu-tag bg-red light sm radius text-right" wx:else>已截止</view>
+          </view>
+          <view class="text-content1" wx:if="{{items.time_meeting}}">
+            <van-icon name="bullhorn-o" size="16px" color="green" /> 会议举办日期： {{m1.format(items.time_meeting)}}
+            <view class="cu-tag bg-green light sm radius text-right" wx:if="{{m2.format(items.time_meeting)}}">
+              {{m2.format(items.time_meeting)}}天</view>
+            <view class="cu-tag bg-red light sm radius text-right" wx:else>已截止</view>
+          </view>
+          <view class="text-content1" wx:if="{{items.address}}">
+            <van-icon name="location-o" size="16px" color="green" /> 会议举办地点： {{items.address}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);">
+    <van-divider contentPosition="center">上滑加载更多...</van-divider>
+  </view> -->
+
+</view>
+
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map(formatNumber).join('-')
+  }
+  function formatNumber(n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n
+  }
+  module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    var theTime = d - myDate
+    var minute = 0; // 分
+    var hour = 0;//小时
+    var day = 0
+    if (theTime > 60) {
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 1
+      }
+    }
+    console.log(day)
+    return day
+  }
+  module.exports.format = format
+</wxs>

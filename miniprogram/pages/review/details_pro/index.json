@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "面试题库",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "towxml":"/towxml/towxml"
+  }
+
+}

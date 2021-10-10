@@ -1,0 +1,42 @@
+/* pages/work/search/index.wxss */
+.box_main {  
+  margin: 0rpx 0; 
+}
+
+.box_main view.cu-bar {
+  margin-top: 0rpx; 
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-top: 50rpx;
+}
+
+.left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  line-height: 80rpx;
+  /* padding: 0 10rpx; */
+  font-size: 34rpx;
+}
+
+.right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  line-height: 80rpx;
+	padding: 0 10rpx;
+  text-align: right;
+  font-size: 34rpx;
+}
+/*分割线样式*/
+.divLine{
+  background: #eaece6;
+  width: 92%;
+  height: 1rpx;
+  margin: auto;
+  margin-bottom: 10rpx;
+ }

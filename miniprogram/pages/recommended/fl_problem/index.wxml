@@ -1,0 +1,32 @@
+<view class="main">
+	<view class="servic_top">
+		<view class="servic_top_Dl">
+			<view>
+				<!-- <view class="servic_top_tw">{{pro_length}}</view> -->
+				<view class="servic_top_tw2">CCF推荐会议</view>
+			</view>
+			<view>
+				<view class="servic_top_tw3">收藏0个会议</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="pro_list" data-id="{{items._id}}" data-limt="{{index}}" wx:for="{{xw_list}}" wx:key="this"
+		wx:for-item="items" bindtap="tz" data-a="recommended/details_ref/index">
+		<view class="pro_list_wz">推  荐</view>
+		<view class="pro_list_wz_mc">{{items.title}}</view>
+		<view class="pro_list_wz_rs">
+			{{items.statr||m1.format()}}人推荐
+		</view>
+		<view class="clean"></view>
+	</view>
+	<view>
+	</view>
+</view>
+
+<wxs module="m1">
+	function format(ts) {
+		return Math.floor((Math.random() * 100))
+	}
+	module.exports.format = format
+</wxs>

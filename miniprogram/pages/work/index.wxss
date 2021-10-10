@@ -1,0 +1,60 @@
+@import "/style/animated.wxss";
+@import "../../style/main.wxss";
+
+.main {
+  background: #f8f8f8;
+  height: 99.5%;
+  width: 100%;
+  animation: fadeIn 0.5s;
+  min-height: 99.5vh;
+}
+
+/* 顶部渐变色 */
+.home-top {
+  height: 145px;
+  padding-top: 14px;
+  background: linear-gradient(to top, #f7f7f7, #3963BC);
+  width: 100%;
+  position: absolute;
+}
+
+.time_tag {
+  color: #d69c63;
+  border: 1px solid #d69c63;
+  border-left-color: #6e95eb;
+}
+
+.ls_but {
+  float: right;
+}
+
+.ls_but view {
+  padding: 10rpx 15rpx;
+}
+
+.margin-top {
+  text-transform: Capitalize;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+/* 悬浮搜索 */
+.search {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 40rpx;
+  bottom: 150rpx;
+  color: #fff;
+  z-index: 100;
+  padding-left: 15rpx;
+  padding-top: 13rpx;
+  font-size: 25px;
+}
+
+.cu-timeline {
+  margin-bottom: 60px;
+}

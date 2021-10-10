@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/user/sign/index",
+    "pages/user/collect/index",
+    "pages/user/star/index",
+    "pages/news/index",
+    "pages/news/details_news/index",
+    "pages/work/index",
+    "pages/work/details_work/index",
+    "pages/work/details_teachin/index",
+    "pages/recommended/index",
+    "pages/recommended/fl_problem/index",
+    "pages/recommended/resume/index",
+    "pages/work/search/index"
+  ],
+  "window": {
+    "backgroundColor": "#f7f7f7",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3963BC",
+    "navigationBarTitleText": "计算机学术论文助手",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位以获取当前位置天气信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,198 @@
+<!-- 顶部 加载中  -->
+<view class="cu-load bg-self {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view>
+
+<!-- 文本加载中 骨架样式 -->
+<view style="background-color: #fff;padding: 20px;" wx:if="{{loding}}">
+	<van-skeleton title row="3" wx:if="{{loding}}" wx:for="{{5}}" wx:key="this" />
+</view>
+
+<view class="de-main" wx:if="{{!loding}}">
+	<!-- 标题 -->
+	<view
+		style="background-image:url('https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/zx_top_new.png?sign=e5625217828be9e6f74c8aa5d92ea70c&t=1628297418');margin-top: -20rpx;">
+		<view class="detail_bg">
+			<view class="detail-tl">
+				{{ xw_list.conference_full}}
+			</view>
+		</view>
+		<!-- 点赞、收藏和浏览 -->
+		<view class='text-gray text-lg'>
+			<view class="text-right">
+				<van-icon name="good-job" size="18px" color="pink" />
+				<text decode>{{xw_list.star}}&nbsp;&nbsp;</text>
+				<van-icon name="star" size="18px" color="orange" />
+				<text decode>{{xw_list.collect}}&nbsp;&nbsp;</text>
+				<van-icon name="fire" size="18px" color="red" />
+				<text decode>{{xw_list.browse}}&nbsp;&nbsp;</text>
+				<!-- <view class="text-left"><text class='text-gray text-lg  '
+					decode>{{m1.format(xw_list._updateTime)}}&nbsp;&nbsp;</text></view> -->
+			</view>
+		</view>
+		<!-- 胶囊式展示数据来源 -->
+		<view class="cu-capsule">
+			<view class="cu-tag bg-gradual-blue">数据来源</view>
+			<view class="cu-tag line-blue">{{xw_list.ly||'网络'}}</view>
+		</view>
+	</view>
+
+	<view class="cu-card article" hover-class="item-hover" hover-stay-time="100">
+		<view class="cu-item shadow">
+			<view class="box title">
+				<view class="left" style="font-size: large;">
+					<text class="text-xl text-bold text-blue">日程概览</text>
+				</view>
+				<view class="right" style="font-size: large;">
+				</view>
+			</view>
+			<view class="divLine"></view>
+			<view class="content">
+				<!-- <image src="{{items.img}}" mode="aspectFill"></image> -->
+				<view class="desc">
+					<view class="text-content1" wx:if="{{xw_list.time_abs}}">
+						<van-icon name="underway-o" size="16px" color="green" /> 摘要截止日期： {{m1.format(xw_list.time_abs)}}
+					</view>
+					<view class="text-content1" wx:if="{{xw_list.time}}">
+						<van-icon name="clock-o" size="16px" color="green" /> 正文截止日期： {{m1.format(xw_list.time)}}
+					</view>
+					<view class="text-content1" wx:if="{{xw_list.time_accept}}">
+						<van-icon name="free-postage" size="16px" color="green" /> 录用通知日期： {{m1.format(xw_list.time_accept)}}
+					</view>
+					<view class="text-content1" wx:if="{{xw_list.time_meeting}}">
+						<van-icon name="bullhorn-o" size="16px" color="green" /> 会议举办日期： {{m1.format(xw_list.time_meeting)}}
+					</view>
+					<view class="text-content1" wx:if="{{xw_list.address}}">
+						<van-icon name="location-o" size="16px" color="green" /> 会议举办地点： {{xw_list.address}}
+					</view>
+					<view class="text-content1" wx:if="{{xw_list.address}}">
+						<van-icon name="location-o" size="16px" color="green" /> 官方网址： {{xw_list.website}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 展示html格式的校招内容 -->
+	<view class="cu-card article" hover-class="item-hover" hover-stay-time="100">
+		<view class="cu-item shadow ">
+			<view class="detil">
+				<!-- <mp-html showLanguageName="{{true}}" content="{{html}}" selectable="{{true}}" /> -->
+				<towxml nodes="{{markdown}}" />
+			</view>
+		</view>
+	</view>
+
+	<view class="dbu">
+		<!-- 评论 -->
+		<view class="search-form search-round search-index " maxlength="300" cursor-spacing="10" data-id="{{xw_list._id}}"
+			data-url="user/note/add_note/index">
+			<text class="cuIcon-write text-bold text-lg"> </text>
+			<input bindinput='commentInput' confirm-type="send" bindfocus="onInputFocus" name="inputComment"
+				value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}"
+				bindblur="onReplyBlur" />
+		</view>
+		<!-- 笔记 -->
+		<!-- <view bindtap="tz" data-id="{{xw_list._id}}" data-url="user/note/add_note/index" wx:if="{{!isFocus}}">
+			<van-icon name="edit" size="28px" color="grey" />
+		</view> -->
+		<!-- 收藏/取消 -->
+		<view bindtap="star_sc" data-id="collect" wx:if="{{sc_show}}">
+			<van-icon name="star" size="28px" color="orange" />
+		</view>
+		<view bindtap="star_sc" data-id="collect" wx:else>
+			<van-icon name="star-o" size="28px" color="grey" />
+		</view>
+		<!-- 点赞/取消 -->
+		<view bindtap="star_sc" data-id="star" wx:if="{{dz_show}}">
+			<van-icon name="good-job" size="28px" color="orange" />
+		</view>
+		<view style="margin-right: -10rpx;" bindtap="star_sc" data-id="star" wx:else>
+			<van-icon name="good-job-o" size="28px" color="grey" />
+		</view>
+		<view style="margin-right: 16rpx; margin-top: 4rpx;">
+			<button class="btn_share" open-type="share" data-index="1">
+				<van-icon name="share-o" size="30px" color="grey"> </van-icon>
+			</button>
+		</view>
+
+		<!-- 发送评论 -->
+		<button class='cu-btn bg-green shadow-blur' style="height:8vw;width: 16vw;margin-right: 8rpx;"
+			bindtap="submitCommend" wx:if="{{isFocus}}">发送</button>
+	</view>
+
+	<!-- 评论列表 -->
+	<view class="bg-white margin-top-xs" id="the_id">
+		<!-- 评论数 -->
+		<view class="cu-bar bg-white">
+			<view class='action'>
+				<text class='cuIcon-titles text-orange '></text>
+				共{{xw_list.totalComments||0}}条评论
+			</view>
+		</view>
+		<!-- 评论内容 -->
+		<van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
+		<view class="cu-list menu menu-avatar comment solids-top">
+			<view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item"
+				data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
+				bindtap="focusComment">
+				<view class="cu-avatar round" style="background-image:url({{item.cAvatarUrl}});" data-id="{{item._id}}"
+					data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment"></view>
+				<view class='content'>
+					<view class='text-grey' data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
+						bindtap="focusComment" wx:if="{{item.isVip}}" style="color:red">
+						{{item.cNickName}}
+					</view>
+					<view class='text-grey light' data-id="{{item._id}}" data-name="{{item.cNickName}}"
+						data-openid="{{item.cOpenId}}" bindtap="focusComment" wx:else>
+						{{item.cNickName}}
+					</view>
+					<view class='text-gray text-content text-df'>{{item.comment}}</view>
+					<view class='padding-xs radius  text-sm text-gray'>
+						<view class="bg-gray lighty flex" wx:for="{{item.childComment}}" wx:key="id" wx:for-index="id"
+							wx:for-item="childItem">
+							<view data-id="{{item._id}}" data-name="{{childItem.cNickName}}" data-openid="{{childItem.cOpenId}}"
+								bindtap="focusComment">
+								<view class='text-grey' wx:if="{{childItem.isVip}}" style="color:red">{{childItem.cNickName}}：</view>
+								<view class='text-grey' wx:else>{{childItem.cNickName}}：</view>
+							</view>
+							<view class='flex-sub'>{{childItem.comment}}</view>
+						</view>
+					</view>
+					<view class='flex justify-between'>
+						<view class='text-gray text-df'>{{item.createDate}}</view>
+						<view>
+							<text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+							<text class="text-gray margin-left-xs">{{item.childComment.length}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view style="padding:50rpx"></view>
+	</view>
+
+	<!-- 弹出层：授权 -->
+	<!-- <template is="login" data="{{showLogin: showLogin}}"></template> -->
+
+</view>
+
+<wxs module="m1">
+	function format(ts) {
+		var d = getDate(ts)
+		var myDate = getDate();
+		return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map(formatNumber).join('/')
+	}
+	function formatNumber(n) {
+		n = n.toString()
+		return n[1] ? n : '0' + n
+	}
+	module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    return [d.getFullYear(), d.getMonth()+1, d.getDate()].join('-')
+      + ' '
+      + [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+  }
+  module.exports.format = format
+</wxs>

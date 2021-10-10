@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "详情内容",
+  "navigationBarTextStyle": "white",
+
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "mp-html": "mp-weixin",
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  }
+
+}

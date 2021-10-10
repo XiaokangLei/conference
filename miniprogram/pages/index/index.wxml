@@ -1,0 +1,37 @@
+<view class="main">
+
+	<!-- 底部五个分类，资讯，笔试，校招，面试，我的，id分别为12345 -->
+	<view>
+		<news popr="{{ hd_op}}" wx:if="{{id==1}}" />
+		<review wx:if="{{id==2}}" />
+		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
+		<recommended wx:if="{{id==4}}" />
+		<user wx:if="{{id==5}}" />
+	</view>
+	<!-- 底部五个模块：资讯、题库、校招、内推、我的 -->
+	<view class="cu-bar tabbar bg-white shadow foot">
+		<view bindtap="changeTab" data-id="1" class="action jk text-gray {{id==1?'xzcg ':''}} ">
+			<view class="">
+				<view class="cuIcon-discover" style="font-weight: 600;"></view>
+			</view> 资讯
+		</view>
+		<view bindtap="changeTab" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}">
+			<view class="cuIcon-form" style="font-weight: 600;"></view>
+			期刊
+		</view>
+		<view bindtap="changeTab" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}">
+			<view class="cu-btn cuIcon-shuye  {{id==3?'tab_color':'tab_color_light'}} shadow">
+			</view>
+			日程
+		</view>
+		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="changeTab" data-id="4">
+			<view class="cuIcon-circle" style="font-weight: 600;"></view>
+			会议
+		</view>
+		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="changeTab" data-id="5">
+			<view class="cuIcon-my" style="font-weight: 600;"></view>
+			我的
+		</view>
+	</view>
+
+</view>

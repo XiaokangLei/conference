@@ -1,0 +1,63 @@
+<view class="page-box">
+
+  <view class="ans_bst">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">CCF推荐会议</text>
+        <text class="bg-tree"></text>
+      </view>
+      <navigator class="ntp" url="/pages/recommended/fl_problem/index">查看更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+    <view class="scroll_box">
+      <scroll-view scroll-x>
+        <navigator hover-class="item-hover" url="/pages/recommended/details_ref/index?id={{items._id}}"
+          class="item_list" wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
+          <view class="item_list_ds">
+            <view class="dis2">
+              <view class="item_top_Wz">新</view>
+              <view class="item_top_Wz2"> {{items.title}}</view>
+            </view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 论文模板 -->
+  <view class="ans_bst">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">论文模板</text>
+        <text class="bg-tree"></text>
+      </view>
+      <navigator class="ntp" url="/pages/recommended/resume/index">查看更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+
+    <view class="order">
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="https://7465-test-9ndes-1301493105.tcb.qcloud.la/index3.jpg?sign=ba3624e9f70d7c53690ef57a849d02b3&t=1633612630"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">会议论文格式相关模板查看与下载。</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
+  </view>
+</view>
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+  }
+  module.exports.format = format
+</wxs>

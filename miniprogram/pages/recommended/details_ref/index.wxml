@@ -1,0 +1,44 @@
+<view class="de-main">
+	<view class="home-jcly">
+		<view class="cu-item grayscale">
+			<view class="cu-avatar radius ">
+				<text>荐</text>
+			</view>
+			<text class="text-cut text-lg">CCF推荐会议</text>
+			<!-- <view class="content2">
+				<view>
+					<text class="text-cut text-lg">内推直招</text>
+				</view>
+				<view class="text-gray text-sm flex">
+					<text class="text-cut"></text>
+				</view>
+			</view> -->
+		</view>
+
+		<view class="detail-tl">
+			{{ xw_list.title}}
+		</view>
+	</view>
+	<view class="m3">
+		<view class="tille-1">
+			详细信息
+		</view>
+		<view class="detil">
+			<towxml nodes="{{markdown}}" />
+		</view>
+	</view>
+</view>
+
+
+<!-- <view class="dbu">
+
+	<view bindtap="statr_sc" data-id="collect" data-kind="recommended" class="dbu_lk {{sc_show?'cg_sp':''}}">
+		<van-icon name="star-o" size="20px" />
+		<view class="dbu_wz ">收藏 {{xw_list.collect||0}}</view>
+	</view>
+	<view bindtap="statr_sc" data-id="start" data-kind="recommended" class=" dbu_lk {{dz_show?'cg_sp':''}}">
+		<van-icon name="good-job-o" size="20px" />
+		<view class="dbu_wz ">推荐 {{xw_list.statr}}</view>
+	</view>
+
+</view> -->

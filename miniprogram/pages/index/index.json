@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#3963BC",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "news": "../news",
+    "user": "../user",
+    "review":"../review",
+    "recommended":"../recommended",
+    "work":"../work"
+  }
+}

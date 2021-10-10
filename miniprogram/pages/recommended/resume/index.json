@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-progress": "@vant/weapp/progress/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
+  }
+}

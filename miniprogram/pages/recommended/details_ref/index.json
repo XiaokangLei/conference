@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "详情内容",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "towxml":"/towxml/towxml"
+  }
+
+}

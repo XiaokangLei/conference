@@ -1,0 +1,109 @@
+/* miniprogram/pages/details/index.wxss */
+.detail-tl {
+  font-size: 48rpx;
+  font-family: PingFang;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(51, 51, 51, 1);
+  line-height: 70rpx;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.de_Img {
+  width: 100%;
+  height: 150px;
+}
+
+.btn1 {
+  font-size: 50rpx;
+  background: transparent;
+  color: #d69c63;
+  padding: 0px;
+  padding-top: 4px;
+  width: 100% !important;
+  border-radius: 98rpx;
+}
+
+.detail-sj {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  font-family: PingFang;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.detail-sj>view {
+  margin-right: 15px;
+}
+
+.detil {
+  padding: 10px 15px;
+  background-color: #fff;
+  line-height: 30px;
+  overflow: hidden;
+  min-height: 60vh;
+  font-size: 40rpx;
+  font-family: PingFang;
+  padding-bottom: 40px;
+  padding-top: 0px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.home-jcly {
+  background-color: #fff;
+  padding-bottom: 30rpx;
+}
+
+.line-tree {
+  background-color: #fff;
+}
+
+.detail_bg {
+  padding-bottom: 10px;
+}
+
+.cu-capsule {
+  margin-top: -30px;
+}
+
+.loding_bg {
+  background: #3963BC;
+  display: flex;
+  justify-content: center;
+  color: #fff
+}
+
+.loding_img {
+  width: 100px;
+  height: 40px;
+}
+
+.de-main {
+  animation: fadeIn .8s;
+  background-color: #f8f8f8;
+}
+
+.bj {
+  background: linear-gradient(to top, #75b7e0, #3963BC);
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  color: #fff;
+
+}

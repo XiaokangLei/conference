@@ -1,0 +1,245 @@
+@import "../../style/main.wxss";
+@import "/style/animated.wxss";
+
+.page-box {
+  animation: fadeIn .5s;
+}
+
+.order {
+  width: 710rpx;
+  background-color: #ffffff;
+  margin: 20rpx auto;
+  margin-top: 0px;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.order .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .top .left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.order .top .left .store {
+  margin: 0 10rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.order .top .right .progressBox {
+  width: 200rpx;
+  float: right;
+}
+
+.order .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 20rpx 0 0;
+}
+
+.order .item .left {
+  margin-right: 20rpx;
+}
+
+.cuIcon-titles {
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background-color: #0081ff
+}
+
+.order .item .left image {
+  width: 260rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+
+}
+
+.order .item .content .title {
+  font-size: 28rpx;
+  line-height: 45rpx;
+}
+
+.order .item .content .type {
+  margin: 6rpx 0;
+  font-size: 28rpx;
+  color: #909399;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.order .item .content .delivery-time {
+  color: #0081ff;
+  font-size: 24rpx;
+}
+
+.order .item .right {
+  margin-left: 10rpx;
+  padding-top: 20rpx;
+  text-align: right;
+}
+
+.order .item .right .decimal {
+  font-size: 24rpx;
+  margin-top: 4rpx;
+}
+
+.order .item .right .number {
+  color: #909399;
+  font-size: 24rpx;
+}
+
+
+.order .bottom {
+  line-height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order .bottom .btnBox .btn {
+  line-height: 52rpx;
+  width: 140rpx;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #909399;
+}
+
+.order .bottom .btnBox .evaluate {
+  color: #fff;
+  background-color: #3963BC;
+}
+
+.fgx {
+  margin: 12px 0px 7px;
+  border-bottom: 1px solid rgb(241, 241, 241);
+  width: 100%;
+  transform: scaleY(0.5);
+  border-top-color: rgb(241, 241, 241);
+  border-right-color: rgb(241, 241, 241);
+  border-left-color: rgb(241, 241, 241);
+}
+
+.scroll_box {
+  width: 100%;
+  height: 157rpx;
+  overflow: hidden;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.item-hover {
+  background: rgb(230, 230, 230) !important;
+}
+
+.item_list {
+  width: 56%;
+  height: 100%;
+  padding: 20rpx;
+  margin-right: 23rpx;
+  display: inline-block;
+  margin-left: 10px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 7px;
+}
+
+.item_list_ds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dis {
+  display: flex;
+}
+
+.dis>view {
+  display: flex;
+  line-height: 38rpx;
+}
+
+.ntp {
+  height: 100%;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.bg-tree {
+  background-color: #d69c63;
+  color: #d69c63;
+}
+
+.item-hover {
+  background: rgb(230, 230, 230) !important;
+}
+
+.item_top_Wz2 {
+  margin-left: 10rpx;
+  word-break: break-all;
+  height: 78rpx;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: calc(100% - 27px);
+}
+
+.dis2 {
+  display: flex;
+  height: 40px;
+}
+
+.ans_bst {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+}
+
+.cu-bar {
+  min-height: 90rpx;
+}
+
+.ans_xzt {
+  margin: 10px;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.item_top_Wz {
+  background-color: #f5883f;
+  width: 19px;
+  text-align: center;
+  height: 19px;
+  display: inline-block;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+  font-weight: 700;
+  padding: 2rpx;
+}
+
+.sub_title {
+  margin-top: 3px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(0deg, rgba(120, 255, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  -webkit-text-fill-color: transparent;
+}

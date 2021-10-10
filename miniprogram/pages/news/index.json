@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#649cd5",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "list":"/components/news_list/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

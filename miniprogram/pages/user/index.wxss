@@ -1,0 +1,212 @@
+@import "/style/animated.wxss";
+@import "../../style/main.wxss";
+@import '/style/icon.wxss';
+@import '/style/icon2.wxss';
+
+
+.user {
+  background: #f8f8f8;
+  width: 100%;
+  animation: fadeIn .5s;
+}
+
+.cu-dialog {
+  width: 500rpx;
+}
+
+.actic {
+  display: flex;
+  padding: 0px 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.actic button {
+  width: 47%;
+}
+
+.content2 {
+  margin-bottom: 20rpx;
+}
+.content2 text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 2px solid #fff
+}
+
+.user-section {
+  padding: 20rpx 30rpx;
+  padding-bottom: 0px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f8f8;
+}
+
+.cu-list {
+  padding: 0px 10rpx;
+}
+
+.text-tree {
+  font-size: 18px !important;
+}
+
+.cu-item {
+  padding-left: 0px !important;
+}
+
+.user-info-box {
+  height: 130rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.user-info-box .portrait {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.user-info-box .username {
+  font-size: 38rpx;
+  color: black;
+  margin-left: 30rpx;
+}
+
+.user-info-box .username2 {
+  font-size: 24rpx;
+  color: #f19252;
+  margin-left: 30rpx;
+}
+
+.bg_fe {
+  background-color: #ffbb5b;
+  color: #fff
+}
+
+.bg_te {
+  background-color: #5ab3ee;
+  color: #fff
+}
+
+.user_jx {
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.bd_user {
+  position: fixed;
+  right: 0px;
+  padding: 3px 10px;
+  background: linear-gradient(to top left, #f7bf9e, #d68763);
+  color: #fff;
+  font-size: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.nav-li {
+  padding: 30rpx;
+  width: calc(50% - 20rpx);
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.nav-li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -10%;
+  border-radius: 10rpx;
+  opacity: 0.2;
+  transform: scale(0.9, 0.9);
+}
+
+.nav-li.cur {
+  color: #fff;
+  background: rgb(94, 185, 94);
+  box-shadow: 4rpx 4rpx 6rpx rgba(94, 185, 94, 0.4);
+}
+
+.nav-title {
+  font-size: 28rpx;
+  font-weight: 300;
+}
+
+.nav-title::first-letter {
+  font-size: 36rpx;
+  margin-right: 4rpx;
+}
+
+.nav-name {
+  font-size: 24rpx;
+  text-transform: Capitalize;
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.nav-name::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40rpx;
+  height: 6rpx;
+  background: #fff;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.nav-name::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100rpx;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  right: 40rpx;
+  opacity: 0.3;
+}
+
+.nav-name::first-letter {
+  font-weight: bold;
+  font-size: 36rpx;
+  margin-right: 1px;
+}
+
+.nav-li text {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  font-size: 52rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}

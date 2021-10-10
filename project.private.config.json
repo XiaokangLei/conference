@@ -1,0 +1,216 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/work/details_work/index",
+          "pathName": "pages/work/details_work/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/work/fl_css/index",
+          "pathName": "pages/work/fl_css/index",
+          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
+          "scene": null
+        },
+        {
+          "name": "pages/work/problem/index",
+          "pathName": "pages/work/problem/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details_pro/index",
+          "pathName": "pages/details_pro/index",
+          "query": "id=28ee4e3e606e751d0e846f3e4f2903b4",
+          "scene": null
+        },
+        {
+          "name": "pages/user/daka/index",
+          "pathName": "pages/user/daka/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/note/recommended/index",
+          "pathName": "pages/note/add_note/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/work/fl_css/index",
+          "pathName": "pages/work/fl_css/index",
+          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
+          "scene": null
+        },
+        {
+          "name": "pages/user/daka/index",
+          "pathName": "pages/user/daka/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/collect/index",
+          "pathName": "pages/user/collect/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/gitee_login/index",
+          "pathName": "pages/user/gitee_login/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/index",
+          "pathName": "pages/repos/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/news/ranking/index",
+          "pathName": "pages/news/ranking/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/book/index",
+          "pathName": "pages/book/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/user/sign/index",
+          "pathName": "pages/user/sign/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/detail/index",
+          "pathName": "pages/repos/detail/index",
+          "query": "namespace=KyotoKing_tree&path=treeworld_Applet",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/detail/index",
+          "pathName": "pages/repos/detail/index",
+          "query": "namespace=KyotoKing_tree&path=treeworld_Applets",
+          "scene": null
+        },
+        {
+          "name": "pages/news/history/index",
+          "pathName": "pages/news/history/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/gitee_login/index",
+          "pathName": "pages/user/gitee_login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details_dicz/index",
+          "pathName": "pages/details/details_dicz/index",
+          "query": "id=28ee4e3e60861a5b125beeb134f4d83e",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details_pro/index",
+          "pathName": "pages/details/details_pro/index",
+          "query": "id=17453ede6094995207e7a20f04bd2385&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/work/fl_problem/index",
+          "pathName": "pages/work/fl_problem/index",
+          "query": "id=28ee4e3e606e751d0e846f3e4f2903b4&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/user/problem_list/index",
+          "pathName": "pages/user/problem_list/index",
+          "query": "id=17453ede6094995207e7a20f04bd2385&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/news/index",
+          "pathName": "pages/news/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/history/add_note/index",
+          "pathName": "pages/news/history/add_note/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "sign=true",
+          "scene": null
+        },
+        {
+          "name": "pages/s",
+          "pathName": "pages/book/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/inde",
+          "pathName": "pages/user/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/recommended/index",
+          "pathName": "pages/recommended/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/recommended/details_ans/index",
+          "pathName": "pages/recommended/details_ans/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/work/warehouse/index",
+          "pathName": "pages/work/warehouse/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "id_index=2",
+          "scene": null
+        },
+        {
+          "name": "pages/recommended/fl_problem/index",
+          "pathName": "pages/recommended/fl_problem/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

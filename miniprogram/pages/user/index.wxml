@@ -34,7 +34,12 @@
 				<text class="username">{{nickName||'游客'}}</text>
 				<view class="username2">愿有一天 你能把优秀发挥到极致</view>
 			</view>
-			<view class="bd_user" bindtap="tz" data-a="user/sign/index">签到</view>
+			<view class="flex padding  flex-direction text-center text-grey " style="margin-left: 5rpx; width: 190rpx; height: 120rpx; display: flex; box-sizing: border-box">
+				<view class="text-xxl text-orange">{{visitTotal}}</view>
+				<view class="margin-top-sm" style="margin-top: -1rpx;">
+					<text class="cuIcon-attentionfill"></text> View</view>
+			</view>
+			<!-- <view class="bd_user" bindtap="tz" data-a="user/sign/sign">签到</view> -->
 		</view>
 	</view>
 	<view class="padding-sm">
@@ -45,8 +50,8 @@
 				<text class="text-sl">{{signedDays}}</text>
 				天
 			</view>
-			<view class="padding-sm radius">
-				<button class="text-df cu-btn round bg-green " bindtap="btnSigned">{{signBtnTxt}}</button>
+			<view class="padding-sm radius" >
+				<button class="text-df cu-btn round bg-green shadow-blur shadow" bindtap="btnSigned" style="width:100%;">{{signBtnTxt}}</button>
 			</view>
 		</view>
 	</view>

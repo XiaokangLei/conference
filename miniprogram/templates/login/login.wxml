@@ -1,0 +1,18 @@
+<template name="login">
+  <view class="cu-modal {{showLogin?'show':''}}">
+    <view class="cu-dialog">
+      <view class="flex padding justify-center">
+        <view class="cu-avatar xl margin-top-xl round"><text class='cuIcon-people text-darkGray text-sl'></text></view>
+      </view>
+      <view class='padding-xl text-gray'>允许微信授权后,可体验更多功能</view>
+      <view class="cu-bar bg-white justify-center ">
+        <view class='action'>
+          <button class='cu-btn line-green text-green'  bindtap='navigateBack'>返回上页</button>
+          <button open-type='getUserInfo' class='cu-btn bg-green margin-left'  bindgetuserinfo="getUserInfo">
+            授权登录
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -59,7 +59,7 @@ function checkPostComment(content) {
 function getMemberInfo(openId) {
   return db.collection('mini_member')
     .where({
-      _openId: openId
+      openId: openId
     })
     .get()
 }
@@ -149,6 +149,59 @@ function getPostComments(page, postId) {
     .get()
 }
 
+function getSignedDetail(openId, year,month) {
+  return wx.cloud.callFunction({
+      name: 'memberService',
+      data: {
+          action: "getSignedDetail",
+          openId: openId,
+          year: year,
+          month:month
+      }
+  })
+}
+
+/**
+ * 新增签到
+ */
+function addSign(info) {
+  return wx.cloud.callFunction({
+      name: 'memberService',
+      data: {
+          action: "addSign",
+          info: info
+      }
+  })
+}
+
+/**
+* 补充签到
+*/
+function addSignAgain(info) {
+  return wx.cloud.callFunction({
+      name: 'memberService',
+      data: {
+          action: "addSignAgain",
+          info: info
+      }
+  })
+}
+/**
+ * 获取分享明细
+ * @param {} openId 
+ * @param {*} date 
+ */
+function getShareDetailList(openId,date)
+{
+    return db.collection('mini_share_detail')
+    .where({
+        shareOpenId: openId,
+        date:date
+    })
+    .limit(5)
+    .get()
+}
+
 module.exports = {
   GET_conference: task.Tree_get(db.collection('conference').limit(4).orderBy('_createTime', 'asc')),
   GET_conference_cutdown: task.Tree_get(db.collection('conference').limit(20).where({
@@ -169,4 +222,8 @@ module.exports = {
   getPointsDetailList:getPointsDetailList,
   getViewNum:getViewNum,
   addViewNum:addViewNum,
+  getSignedDetail:getSignedDetail,
+  addSignAgain:addSignAgain,
+  addSign:addSign,
+  getShareDetailList:getShareDetailList,
 }

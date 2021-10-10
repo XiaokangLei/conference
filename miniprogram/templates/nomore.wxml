@@ -1,0 +1,7 @@
+<template name="nomore"> 
+  <view class="nomore">    
+    <view>
+      {{ nodata_str || '—— 仅展示部分日程，顶部搜索其他日程 ——' }}
+    </view>
+  </view>
+</template>

@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/user/index",
-    "pages/user/sign/index",
+    "pages/user/sign/sign",
     "pages/user/collect/index",
     "pages/user/star/index",
     "pages/news/index",

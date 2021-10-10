@@ -1,4 +1,6 @@
 import envId from "../../utils/config.js"
+const api = require('../../utils/api.js');
+const util = require('../../utils/util.js')
 const db = wx.cloud.database({
   env: envId.envId
 })
@@ -18,6 +20,8 @@ Component({
     Custom: app.globalData.Custom,
     nickName: "游客",
     signBtnTxt: "每日打卡",
+    visitTotal: 0,
+    signedDays: 0, //连续签到天数
     show: false,
     coverTransform: "translateY(0px)",
     coverTransition: "0s",
@@ -68,13 +72,17 @@ Component({
     }]
   },
   pageLifetimes: {
-    show: function () {
+    show: async function () {
       this.sq()
+      await this.getMemberInfo()
     },
 
   },
-  created() {
+  created: async function() {
     this.sq()
+    await this.getMemberInfo()
+    await this.getViewNum()
+    await api.addViewNum()
     console.log(wx.getStorageSync('userid'))
     wx.setNavigationBarTitle({
       title: "个人中心"
@@ -104,6 +112,55 @@ Component({
         show: false
       })
     },
+      /**
+   * 签到列表
+   * @param {*} e 
+   */
+  btnSigned: async function (e) {
+    wx.navigateTo({
+      url: '../user/sign/sign?signedDays=' + this.data.signedDays + '&signed=' + this.data.signed + '&signedRightCount=' + this.data.signedRightCount
+    })
+  },
+   /**
+   * @param {} visitTotal
+   */
+  getViewNum: async function () {
+    let that = this;
+    let res = await api.getViewNum();
+    that.setData({
+      visitTotal: res.data[0].visitTotal
+    })
+    // 然后每隔一秒执行一次倒计时函数(局部刷新)
+  },
+    /**
+   * 获取用户信息
+   * @param {} e 
+   */
+  getMemberInfo: async function (e) {
+
+    let that = this
+    try {
+      let res = await api.getMemberInfo(app.globalData.openid)
+      console.info(res)
+      if (res.data.length > 0) {
+        let memberInfo = res.data[0]
+        that.data.applyStatus = memberInfo.applyStatus
+        that.vipDesc = Number(memberInfo.level) > 1 ? "VIP" : "申请VIP"
+        that.sighRightCount = memberInfo.sighRightCount == undefined ? 0 : memberInfo.sighRightCount
+        that.setData({
+          signedDays: new Date(util.formatTime(new Date())).getTime() - new Date(memberInfo.lastSignedDate).getTime() <= 86400000 ? memberInfo.continueSignedCount : 0,
+          signed: util.formatTime(new Date()) == memberInfo.lastSignedDate ? 1 : 0,
+          signBtnTxt: util.formatTime(new Date()) == memberInfo.lastSignedDate ? "今日已打卡" : "每日打卡",
+          // vipDesc: Number(memberInfo.level) > 1 ? "VIP" : "申请VIP",
+          // isVip: Number(memberInfo.level) > 1,
+          // applyStatus: memberInfo.applyStatus,
+          // signedRightCount: memberInfo.sighRightCount == undefined ? 0 : memberInfo.sighRightCount
+        })
+      }
+    } catch (e) {
+      console.info(e)
+    }
+  },
     getUserProfile() {
       var that = this
       let userid = wx.getStorageSync('userid')

@@ -4,7 +4,7 @@
 	<view slot="backText">返回</view>
 	<view slot="content">积分中心</view>
 </cu-custom> -->
-<view class="padding bg-white">
+<view class="padding bg-white radius" style="margin:2%">
 	<view class="text-center text-xxl">我的积分总数</view>
 	<view class="padding-xs text-center text-red text-sl">{{totalPoints}}</view>
 	<view class="text-xl text-center">
@@ -14,18 +14,18 @@
 		<text bindtap="showPointDesc">积分说明</text>
 	</view>
 </view>
-<view class="margin-top-sm bg-white">
+<view class="margin-top-sm bg-white radius" style="margin:2%">
 	<view class="text-left text-black text-bold text-xl padding">积分权益</view>
 	<view class="flex solid-bottom align-center margin-left margin-right ">
 		<view class="flex-sub margin-xs bg-gradual-green ssignbanner shadow-blur radius point-task">
 			补签
 		</view>
-		<view class="flex-twice margin-xs">
-			<view>忘记打卡不签</view>
+		<view class="flex-twice margin-xs" >
+			<view>补签打卡</view>
 			<view class="text-sm text-green">200积分/次</view>
 		</view>
 		<view class="flex-treble margin-xs text-right">
-			<button class="cu-btn round bg-gradual-green shadow" bindtap="clickForgetRight">立即兑换</button>
+			<button class="cu-btn round bg-gradual-green shadow-blur shadow" bindtap="clickForgetRight" style="width:75%;">立即兑换</button>
 		</view>
 	</view>
 	<view class="flex solid-bottom align-center margin-left margin-right padding-bottom ">
@@ -33,17 +33,17 @@
 			高亮
 		</view>
 		<view class="flex-twice margin-xs">
-			<view>昵称永久高亮</view>
-			<view class="text-sm text-green">10000积分/永久</view>
+			<view>昵称高亮</view>
+			<view class="text-sm text-green">1w积分/永久</view>
 		</view>
 		<view class="flex-treble margin-xs text-right">
-			<button bindtap="clickHighLight" class="cu-btn round {{highLighted==1?'bg-grey':'bg-gradual-green'}} shadow">
+			<button bindtap="clickHighLight" class="cu-btn round {{highLighted==1?'bg-grey':'bg-gradual-green'}} shadow-blur shadow" style="width:75%;">
 				{{highLightBtnTxt}}
 			</button>
 		</view>
 	</view>
 </view>
-<view class="margin-top-sm bg-white">
+<view class="margin-top-sm bg-white radius" style="margin:2%">
 	<view class="text-left text-black text-bold text-xl padding">做任务，得积分</view>
 	<!-- <view class="flex solid-bottom align-center margin-left margin-right ">
 		<view class="flex-sub margin-xs bg-gradual-orange signbanner shadow-blur radius point-task">
@@ -66,13 +66,13 @@
 			<view class="text-sm text-red">最高+30积分/天</view>
 		</view>
 		<view class="flex-treble margin-xs text-right">
-			<button bindtap="clickSigned" class="cu-btn round {{signed==1?'bg-grey':'bg-orange'}} shadow">
+			<button bindtap="clickSigned" class="cu-btn round {{signed==1?'bg-grey':'bg-orange'}} shadow-blur shadow" style="width:75%;">
 				{{signBtnTxt}}
 			</button>
 		</view>
 	</view>
 </view>
-<view class="margin-top-sm bg-white">
+<view class="margin-top-sm bg-white radius" style="margin:2%">
 	<view class="text-left text-black text-bold text-xl padding">分享好友，得积分</view>
 	<view class="text-center ">
 		每邀请一位新用户，可获得
@@ -87,8 +87,8 @@
 			<view class="text-center text-sm">{{item.nickName}}</view>
 		</view>
 	</view>
-	<view class="text-center padding-bottom">
-		<button open-type="share" class="cu-btn btn-width round bg-gradual-orange signbanner shadow-blur shadow">
+	<view class="text-center padding-bottom" style="margin-top: 20rpx;">
+		<button open-type="share" class="cu-btn btn-width round bg-gradual-orange signbanner shadow-blur shadow" style="width:30%;">
 			立即邀请
 		</button>
 	</view>

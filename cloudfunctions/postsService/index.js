@@ -251,7 +251,7 @@ async function addPostCollection(event) {
  */
 async function addViewNum() {
 
-  await db.collection('mini_config').doc('9bf625a55f140da50025e9ac4de27133').update({
+  await db.collection('mini_config').doc('fddd30c55eabaef4003358e20dc8fffc').update({
     data: {
       visitTotal: _.inc(1)
     }

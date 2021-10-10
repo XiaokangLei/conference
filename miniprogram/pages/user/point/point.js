@@ -77,6 +77,9 @@ Page({
     });
 
     let res = await api.getMemberInfo(app.globalData.openid)
+    // console.log("0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0")
+    // console.log(app.globalData.openid)
+    // console.log("0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0")
     if (res.data.length > 0) {
       let memberInfo = res.data[0]
       that.data.applyStatus = memberInfo.applyStatus

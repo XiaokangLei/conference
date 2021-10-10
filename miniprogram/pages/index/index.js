@@ -55,6 +55,18 @@ Page({
   onShow: function () {
   },
 
+  // /**
+  //  * @param {} visitTotal
+  //  */
+  // getViewNum: async function () {
+  //   let that = this;
+  //   let res = await api.getViewNum();
+  //   that.setData({
+  //     visitTotal: res.data[0].visitTotal
+  //   })
+  //   // 然后每隔一秒执行一次倒计时函数(局部刷新)
+  // },
+
   /**
    * 初始化页面
    */

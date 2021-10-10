@@ -17,6 +17,7 @@ Component({
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
     nickName: "游客",
+    signBtnTxt: "每日打卡",
     show: false,
     coverTransform: "translateY(0px)",
     coverTransition: "0s",
@@ -35,6 +36,14 @@ Component({
       name: '我的点赞',
       data_page: "user/star/index",
       bindtap: "bindZan"
+    }, {
+      icon: 'noticefill',
+      color: 'orange',
+      badge: 0,
+      name: '我的消息',
+      
+      data_page: "user/notice/notice",
+      bindtap: "bindNotice"
     },{
       icon: 'infofill',
       color: 'yellow',
@@ -42,6 +51,20 @@ Component({
       name: '关于',
       data_page: "user/about/about",
       bindtap: "bindCollect"
+    }, {
+      icon: 'formfill',
+      color: 'blue',
+      badge: 0,
+      name: '历史版本',
+      data_page: "user/release/release",
+      bindtap: "showRelease"
+    }, {
+      icon: 'goodsfavor',
+      color: 'green',
+      badge: 0,
+      name: '我的积分',
+      data_page: "user/point/point",
+      bindtap: "bindPoint"
     }]
   },
   pageLifetimes: {
@@ -148,6 +171,7 @@ Component({
       }
 
     },
+    
     coverTouchend() {
       if (this.data.moving === false) {
         return;
